@@ -31,6 +31,12 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
+  on_destroy_completed:
+    name: On destroy completed
+    needs: get_current_step
+
+   runs-on: ubuntu-latest
+
     steps:
       # In README.md, switch step 6 for step X.
       - name: Update to step X
